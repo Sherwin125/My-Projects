@@ -1,0 +1,131 @@
+//Budget Calculator by Sherwin Fakhraie. This program will allow the user to store their monthly and expenditures, and will be able to calculate the user's monthly expenses
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+public class P1A5_FAKHRAIE_3937253
+{
+  public static void main(String[] args)
+  {
+  JFrame userName = new JFrame();
+  Object name = JOptionPane.showInputDialog(userName, "Enter your name:");
+    System.out.print("Welcome "+name); System.out.println(" to the Budget Calculator By Sherwin Fakhraie. This program will allow you to store and manage your income and expenditures, while calculating your monthly expenses. ");
+    
+    System.out.println();
+    
+    Scanner userInput = new Scanner(System.in);
+        
+    // This variable will be the user's hourly pay rate;
+    System.out.println("Please enter your regular hourly pay-rate");
+    double hourlyRate = userInput.nextDouble();
+    System.out.printf("Your regular hourly pay-rate is: $%,.2f\n", hourlyRate);
+    
+    System.out.println(); 
+
+    // This variable will be the user's overtime pay rate;
+    System.out.println("Please enter your overtime hourly pay-rate");
+    double overtimeRate = userInput.nextDouble();
+    System.out.printf("Your overtime hourly pay-rate is: $%,.2f\n", overtimeRate);
+    
+    System.out.println();
+    
+    // This variable will be the user's monthly number of regular hours worked;
+    System.out.println("Please enter the monthly number of regular hours worked");
+    double regHoursWorked = userInput.nextDouble();
+    System.out.println("The number of regular hours worked this month is: "+regHoursWorked);
+    
+    System.out.println();
+    
+    // This variable will be the user's monthly number of overtime hours worked;
+    System.out.println("Please enter the monthly number of overtime hours worked");
+    double overtimeHoursWorked = userInput.nextDouble();
+    System.out.println("The number of overtime hours worked this month is: "+overtimeHoursWorked);
+    
+    System.out.println();
+    
+    // This variable will be the user's monthly rent payment;
+    System.out.println("Please enter your monthly rent payment");
+    double rent = userInput.nextDouble();
+    System.out.printf("Your monthly rent payment is: $%,.2f\n", rent);
+    
+    System.out.println();
+    
+    // This variable will be the user's percentage of pay that goes towards their electric bill;
+    System.out.println("Please enter the percentage of your monthly pay that goes towards the electric bill");
+    double electricBillPct = userInput.nextDouble();
+    System.out.print("Your electric bill is: "+electricBillPct); System.out.println("% of your monthly pay");
+    
+    System.out.println();
+    
+    // This variable will be the user's percentage of pay that goes towards their water bill;
+    System.out.println("Please enter the percentage of your monthly pay that goes towards the water bill");
+    double waterBillPct = userInput.nextDouble();
+    System.out.print("Your water bill is: "+waterBillPct); System.out.println("% of your monthly pay");
+    
+    System.out.println();
+    
+    // This variable will be the user's percentage of pay that goes towards their sewer bill;
+    System.out.println("Please enter the percentage of your monthly pay that goes towards the sewer bill");
+    double sewerBillPct = userInput.nextDouble();
+    System.out.print("Your sewer bill is: "+sewerBillPct); System.out.println("% of your monthly pay");
+    
+    System.out.println();
+    
+    // This variable will be the user's percentage of pay that goes towards their gas bill;
+    System.out.println("Please enter the percentage of your monthly pay that goes toward the gas bill");
+    double gasBillPct = userInput.nextDouble();
+    System.out.print("Your gas bill is: "+gasBillPct); System.out.println("%of your monthly pay");
+    
+    System.out.println();
+    
+    // This variable will be the user's budget for food expenses;
+    System.out.println("Please enter your monthly budget for food expenses");
+    double foodBudget = userInput.nextDouble();
+    System.out.printf("Your monthly food budget is: $%,.2f\n", foodBudget);
+    
+    System.out.println();
+    
+    // This variable will be the user's budget for entertainment expenses;
+    System.out.println("Please enter your monthly budget for entertainment expenses");
+    double entertainmentBudget = userInput.nextDouble();
+    System.out.printf("Your monthly food budget is: $%,.2f\n", entertainmentBudget);
+    
+    System.out.println();
+    
+    // This variable will be the user's budget for car expenses;
+    System.out.println("Please enter your monthly budget for car expenses");
+    double carBudget = userInput.nextDouble();
+    System.out.printf("Your monthly car budget is: $%,.2f\n", carBudget);
+    
+    System.out.println();
+    
+    // User's monthly gross pay;
+    double grossPay = (hourlyRate * regHoursWorked) + (overtimeRate * overtimeHoursWorked);
+    System.out.printf("Your gross monthly pay is: $%,.2f\n", grossPay);
+    
+    System.out.println();
+    
+    // User's monthly expenses;
+    double electricBill = (electricBillPct / 100) * grossPay;
+    double waterBill = (waterBillPct / 100) * grossPay;
+    double sewerBill = (sewerBillPct / 100) * grossPay;
+    double gasBill = (gasBillPct / 100) * grossPay;
+    double deductions = (electricBill + waterBill + sewerBill + gasBill + rent + foodBudget + entertainmentBudget + carBudget);
+    
+    System.out.println("Your monthly expenses are:");
+    System.out.printf("Rent: $%,.2f\n", rent);
+    System.out.printf("Electric Bill: $%,.2f\n", electricBill);
+    System.out.printf("Water Bill: $%,.2f\n", waterBill);
+    System.out.printf("Sewer Bill: $%,.2f\n", sewerBill);
+    System.out.printf("Gas Bill: $%,.2f\n", gasBill);
+    System.out.printf("Food: $%,.2f\n", foodBudget);
+    System.out.printf("Entertainment: $%,.2f\n", entertainmentBudget);
+    System.out.printf("Car: $%,.2f\n", carBudget);
+    System.out.println();
+    System.out.printf("Total monthly expenses: $%,.2f\n", deductions);
+    System.out.println();
+    
+    // User's monthly net pay;
+    double netPay = (grossPay - deductions);
+    System.out.printf("Your net monthly pay is: $%,.2f\n", netPay);
+    
+  } 
+}
